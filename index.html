@@ -1,0 +1,1804 @@
+
+
+<!--  if try hosting this on -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">  
+    <style>
+        .viewport{perspective: 700px;}
+        .camera{
+            transform-style: preserve-3d;
+            transform: rotateX(-20deg) rotateY(90deg) translate3d(200px,515px,-250px);}
+        #plane{
+            width: 300px; height: 300px; 
+            position: absolute; 
+            transform-origin: 0px 0px -600px;
+            transform: rotateX(90deg) translate3d(0px, 0px,-600px) ; 
+            background: blue;}
+        #plane2{
+            width: 300px; height: 300px; 
+            position: absolute; 
+            transform-origin: 0px 0px -600px;
+            transform: rotateX(0deg) translate3d(0px, 0px,-600px) ; 
+            background: blue;}
+        #plane3{
+            width: 300px; height: 300px; 
+            position: absolute; 
+            transform-origin: 300px -600px -300px;
+            transform: rotateY(90deg) translate3d(300px, -600px,-300px) ; 
+            background: red;}
+        #left{
+            z-index: 100000;
+            position: absolute; 
+            left: 49%;
+            top:90%;
+            width: 13%;
+            height:10%;
+        }
+        #right{
+            z-index: 100000;
+            position: absolute; 
+            left: 49%;
+            top:70%;
+            width: 13%;
+            height:10%;
+        }
+
+        #header{
+            z-index: 100000;
+            position: absolute; 
+            left: 63%;
+            top:    0%;
+            width: 13%;
+            height:10%;
+        }
+
+        #myid3{
+            border: yellow 5px;
+        }
+        #up{
+            z-index: 100000;
+            position: absolute; 
+            left: 68%;
+            top:70%;
+            width: 15%;
+            height:10%;
+        }
+
+        #but{
+            z-index: 100000;
+            position: absolute; 
+            left: 0%;
+            top:5%;
+            width: 25%;
+            height:30%;
+        }
+        #down{
+            z-index: 100000;
+            position: absolute; 
+            left: 30%;
+            top:10%;
+            width: 15%;
+            height:10%;
+        }
+
+        #stop{
+            z-index: 100000;
+            position: absolute; 
+            left: 48%;
+            top:80%;
+            width: 15%;
+            height:10%;
+        }
+        #z1{
+            z-index: 100000;
+            position: absolute; 
+            left: 33%;
+            top:80%;
+            width: 13%;
+            height:10%;
+        }
+        #z2{
+            z-index: 100000;
+            position: absolute; 
+            left: 65%;
+            top:80%;
+            width: 13%;
+            height:10%;
+        }
+
+        #z3{
+            z-index: 100000;
+            position: absolute; 
+            left: 35%;
+            top:70%;
+            width: 13%;
+            height:10%;
+        }
+
+        #z4{
+            z-index: 100000;
+            position: absolute; 
+            left: 15%;
+            top:70%;
+            width: 13%;
+            height:10%;
+        }
+
+         #z5{
+            z-index: 100000;
+            position: absolute; 
+            left: 15%;
+            top:90%;
+            width: 13%;
+            height:10%;
+        }
+        #rot1{
+            z-index: 100000;
+            position: absolute; 
+            left: 63%;
+            top:90%;
+            width: 13%;
+            height:10%;
+        }
+        #rot2{
+            z-index: 100000;
+            position: absolute; 
+            left: 35%;
+            top:90%;
+            width: 13%;
+            height:10%;
+        }
+
+        #texbox{
+            z-index: 100000;
+            position: absolute; 
+            background-color: black;
+            left: 0%;
+            top:0%;
+            width: 170px;
+            height:190px;
+        }
+        #texbox2{
+            z-index: 100000;
+            position: absolute; 
+            background-color: black;
+            left: 0%;
+            top:0%;
+            width: 300px;
+            height:390px;
+        }
+        #mode{
+            z-index: 100000;
+            position: absolute;
+            left: 20%;
+            top:90%;
+            width: 15%;
+            height:10%;
+        }
+
+    </style>
+
+</head>
+
+
+
+<body style="background-image: url('https://wallpapercave.com/wp/vWTTP6j.jpg');">
+    <div id="credits">
+    </div>
+<div class="viewport" >
+    <div id="sean" class="camera">
+    </div>
+</div>
+    <div id="left"     onclick="UIchange('z+');">
+        <img  id="idL" src="photes/AL1.png" alt="X+" width="100%" height="100%">
+    </div>
+
+    <div id="left"     onclick="UIchange('z+');">
+        <img  id="Down" src="photes/AL1.png" alt="X+" width="100%" height="100%">
+    </div>
+
+    <div id="right"    onclick="UIchange('z-');">
+        <img id="idR" src="" alt="X+" width="100%" height="100%">
+    </div>
+    <div id="up"       onclick="UIchange('y-');">
+        <img id="idU" src="" alt="X+" width="100%" height="100%"></div>
+    <div id="down"     onclick="UIchange('y+');">
+        <img  id="idD" src="https://alex2060.github.io/spiderman/GI.png" alt="" width="400%" height="500%">
+        <br>
+    <button id="but" >Click Me!</button> 
+
+    </div>
+
+
+
+    <div id="stop"     onclick="UIchange('none');">
+        
+        <img id="idR" src="https://alex2060.github.io/spiderman/spidey_PAUSE_button.png" alt="X+" width="100%" height="100%">
+
+    </div>
+    <div id="z1"       onclick="UIchange('x+');">
+        <img  id="idLD" src="" alt="X-" width="100%" height="100%"> 
+    </div>
+    <div id="z2"       onclick="UIchange('x-');">
+        <img  id="idRD" src="" alt="X+" width="100%" height="100%">
+    </div>
+
+
+
+
+    <div id="rot1"     onclick="UIchange('r+');">
+<img  id="idLU" src="" alt="X+" width="100%" height="100%">
+    </div>
+    <div id="rot2"     onclick="UIchange('r-');">
+<img id="idRU" src="" alt="X+" width="100%" height="100%">
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+    <div id="texbox"     onclick="">
+            <label for="fname" style="color: white;">ID</label><br>
+            <input type="text" id="boxID" name="fname"><br>
+            <label for="fname" style="color: white;">HTML</label><br>
+            <input type="text" id="HTML" name="fname"><br>
+            <label for="fname" style="color: white;">IFRAM</label><br>
+            <input type="text" id="IFRam" name="fname"><br>
+            <button onclick="addHTML()">Change</button><button onclick="ONHTML()">ON HTMl</button></br>
+            <button onclick="offHTML()">OFF HTML</button>
+            <button onclick="DELL()">DELL</button></br>
+            <button onclick="MaptoJSON();">MAKEJSON</button></br>
+            <button onclick="SaveMaptoJSON();">Save_MAP</button></br>
+    </div>
+
+
+    <div id="texbox2"     onclick="">
+            <label for="fname" style="color: white;">AU1</label>
+            <input type="text" id="AU1" name="fname"><br>
+            <label for="fname" style="color: white;">AD1</label>
+            <input type="text" id="AD1" name="fname"><br>
+            <label for="fname" style="color: white;">AL1</label>
+            <input type="text" id="AL1" name="fname"><br>
+            <label for="fname" style="color: white;">AR1</label>
+            <input type="text" id="AR1" name="fname"><br>
+            <label for="fname" style="color: white;">ARD</label>
+            <input type="text" id="ARD1" name="fname"><br>
+            <label for="fname" style="color: white;">ALD</label>
+            <input type="text" id="ALD1" name="fname"><br>
+
+            <label for="fname" style="color: white;">ALU</label>
+            <input type="text" id="ALU1" name="fname"><br>
+
+            <label for="fname" style="color: white;">ARU</label>
+            <input type="text" id="ARU1" name="fname"><br>
+
+            <label for="fname" style="color: white;">CR1</label>
+            <input type="text" id="CR1" name="fname"><br>
+
+
+            <label for="fname" style="color: white;">CR2</label>
+            <input type="text" id="CR2" name="fname"><br>
+
+            <label for="fname" style="color: white;">CL1</label>
+            <input type="text" id="CL1" name="fname"><br>
+
+
+            <label for="fname" style="color: white;">CL2</label>
+            <input type="text" id="CL2" name="fname"><br>
+
+
+            <label for="fname" style="color: white;">CJ1</label>
+            <input type="text" id="CJ1" name="fname"><br>
+            
+            <label for="fname" style="color: white;">CS1</label>
+            <input type="text" id="CS1" name="fname"><br>
+
+
+            <label for="fname" style="color: white;">CS2</label>
+            <input type="text" id="CS2" name="fname"><br>
+
+            <label for="fname" style="color: white;">mod</label>
+            <input type="text" id="modeid" name="fname"><br>
+
+            <label for="fname" style="color: white;">BGI</label>
+            <input type="text" id="BGID" name="fname"><br>
+
+
+
+
+            <button onclick="changemap()">change map</button>
+    </div>
+
+    <div id="mode"     onclick="">
+
+
+
+<img id="modeimg"  alt="X+" width="0px" height="0px">
+
+    </div>
+
+<div id="sorce">
+
+</div>
+
+<div id="DM">
+
+</div>
+
+
+
+
+<script type="text/javascript">
+
+
+mypage=parseURLParams(window.location.href);
+
+
+ids=[0,0,0,0,0,0,0,0,0,,0,0,0]
+
+donecalling=false;
+
+player2frams=[["https://alex2060.github.io/spiderman/spidey_left1.png","https://alex2060.github.io/spiderman/spidey_left2.png","https://alex2060.github.io/spiderman/spidey_jump.png","https://alex2060.github.io/spiderman/spidey_right1.png","https://alex2060.github.io/spiderman/spidey_right2.png","https://alex2060.github.io/spiderman/spidey_left1.png"],["https://alex2060.github.io/spiderman/spidey_left1.png","https://alex2060.github.io/spiderman/spidey_left2.png","https://alex2060.github.io/spiderman/spidey_jump.png","https://alex2060.github.io/spiderman/spidey_right1.png","https://alex2060.github.io/spiderman/spidey_right2.png","https://alex2060.github.io/spiderman/spidey_left1.png"],["https://alex2060.github.io/spiderman/spidey_left1.png","https://alex2060.github.io/spiderman/spidey_left2.png","https://alex2060.github.io/spiderman/spidey_jump.png","https://alex2060.github.io/spiderman/spidey_right1.png","https://alex2060.github.io/spiderman/spidey_right2.png","https://alex2060.github.io/spiderman/spidey_left1.png"],["https://alex2060.github.io/spiderman/spidey_left1.png","https://alex2060.github.io/spiderman/spidey_left2.png","https://alex2060.github.io/spiderman/spidey_jump.png","https://alex2060.github.io/spiderman/spidey_right1.png","https://alex2060.github.io/spiderman/spidey_right2.png","https://alex2060.github.io/spiderman/spidey_left1.png"],["https://alex2060.github.io/spiderman/spidey_left1.png","https://alex2060.github.io/spiderman/spidey_left2.png","https://alex2060.github.io/spiderman/spidey_jump.png","https://alex2060.github.io/spiderman/spidey_right1.png","https://alex2060.github.io/spiderman/spidey_right2.png","https://alex2060.github.io/spiderman/spidey_left1.png"],["https://alex2060.github.io/spiderman/spidey_left1.png","https://alex2060.github.io/spiderman/spidey_left2.png","https://alex2060.github.io/spiderman/spidey_jump.png","https://alex2060.github.io/spiderman/spidey_right1.png","https://alex2060.github.io/spiderman/spidey_right2.png","https://alex2060.github.io/spiderman/spidey_left1.png"],["https://alex2060.github.io/spiderman/spidey_left1.png","https://alex2060.github.io/spiderman/spidey_left2.png","https://alex2060.github.io/spiderman/spidey_jump.png","https://alex2060.github.io/spiderman/spidey_right1.png","https://alex2060.github.io/spiderman/spidey_right2.png","https://alex2060.github.io/spiderman/spidey_left1.png"],["https://alex2060.github.io/spiderman/spidey_left1.png","https://alex2060.github.io/spiderman/spidey_left2.png","https://alex2060.github.io/spiderman/spidey_jump.png","https://alex2060.github.io/spiderman/spidey_right1.png","https://alex2060.github.io/spiderman/spidey_right2.png","https://alex2060.github.io/spiderman/spidey_left1.png"],["https://alex2060.github.io/spiderman/spidey_left1.png","https://alex2060.github.io/spiderman/spidey_left2.png","https://alex2060.github.io/spiderman/spidey_jump.png","https://alex2060.github.io/spiderman/spidey_right1.png","https://alex2060.github.io/spiderman/spidey_right2.png","https://alex2060.github.io/spiderman/spidey_left1.png"],["https://alex2060.github.io/spiderman/spidey_left1.png","https://alex2060.github.io/spiderman/spidey_left2.png","https://alex2060.github.io/spiderman/spidey_jump.png","https://alex2060.github.io/spiderman/spidey_right1.png","https://alex2060.github.io/spiderman/spidey_right2.png","https://alex2060.github.io/spiderman/spidey_left1.png"]]
+
+function addplayer(argument) {
+
+    return "<div onclick=\"selectDIV('player1','black',0);\" id=\"player1\" style=\"width: 100px; height: 100px; position: absolute;transform-origin: 0px 0px 0px; transform: translate3d("+(playerx+100)+"px, "+(playery-100)+"px, "+(playerz+50)+"px) rotateY(-45deg) rotateX(0deg); \"   >  <img src=\""+F1S+"\" id=\"play\" alt=\"X+\" width=\"100%\" height=\"100%\"> </div>"+addplayer2(2)+addplayer2(3)+addplayer2(4)+addplayer2(5)+addplayer2(6)+addplayer2(7)+addplayer2(8)+addplayer2(9)+addplayer2(10)+addplayer2(11)+addplayer2(12)+addplayer2(13)+addplayer2(14)+addplayer2(15)+addplayer2(16)+addplayer2(17)+addplayer2(18)+addplayer2(19)+addplayer2(20)+addplayer2(21)+addplayer2(22)+addplayer2(23)+addplayer2(24)+addplayer2(25)+addplayer2(26)+addplayer2(27)+addplayer2(28)+addplayer2(29)+addplayer2(30);
+}
+
+function addplayer2(argument) {
+    return "<div onclick=\"selectDIV('player"+argument+"','black',0);\" id=\"player"+argument+"\" style=\"width: 100px; height: 100px; position: absolute;transform-origin: 0px 0px 0px; transform: translate3d("+(playerx+100)+"px, "+(playery-100)+"px, "+(playerz+50)+"px) rotateY(-45deg) rotateX(0deg); \"   >  <img src=\""+F1S+"\" id=\"play"+argument+"\" alt=\"X+\" width=\"100%\" height=\"100%\"> </div>";
+}
+
+//section1
+
+        function offHTML(){
+            mytext="";
+            for (let i = 0; i < array_spaces.length; i++) {
+              mytext += addspaceNoHTML(array_spaces[i]);
+            }
+            document.getElementById("sean").innerHTML=mytext;
+        }
+
+        function ONHTML(){
+            document.getElementById("sean").innerHTML=get_space();
+        }
+
+        myaddtobot="";
+        function delletDiv(div) {
+
+            newarray=[];
+            for (let i = 0; i < array_spaces.length; i++) {
+                if (array_spaces[i][0]!=div) {
+                    newarray.push(array_spaces[i]);
+                };
+            }
+
+            
+            return newarray;
+        }
+
+        function DELL(){
+            array_spaces=delletDiv(document.getElementById("boxID").value);
+            logEvents.push("D(!!!?A?!!!)"+document.getElementById("boxID").value)
+            ONHTML();
+        }
+
+
+
+        function addspaceNoHTML(array) {
+            if (array[4]==0) {
+                string="<div onclick=\"selectDIV('"+array[0]+"','gold',0);\" id=\""+array[0]+"\" style=\"width: 300px; height: 300px; position: absolute;transform-origin: 0px 0px 0px; transform: translate3d("+array[1]*300+"px,"+array[2]*300+"px,"+array[3]*300+"px) rotateX(90deg);background: blue; \"   > ";
+            }
+            if (array[4]==1) {
+               string="<div onclick=\"selectDIV('"+array[0]+"','gold',0);\" id=\""+array[0]+"\" style=\"width: 300px; height: 300px; position: absolute;transform-origin: 0px 0px 0px; transform: translate3d("+(array[1]*300)+"px,"+(array[2]*300-300)+"px,"+array[3]*300+"px) rotateX(0deg);background:red;\"\"   > ";
+            }
+
+            if (array[4]==2) {
+               string="<div onclick=\"selectDIV('"+array[0]+"','gold',0);\" id=\""+array[0]+"\" style=\"width: 300px; height: 300px; position: absolute;transform-origin: 0px 0px 0px; transform: translate3d("+(array[1]*300+300)+"px,"+(array[2]*300-300)+"px,"+(array[3]*300+300)+"px) rotateY(90deg); background: green;\" \"> ";
+            }
+            string+= myaddtobot+"</div>";
+            return string;
+        }
+
+
+        function addHTML() {
+            for (let i = 0; i < array_spaces.length; i++) {
+                if (array_spaces[i][0]==document.getElementById("boxID").value){
+                    if (document.getElementById("HTML").value!=""){
+                        array_spaces[i][5]=document.getElementById("HTML").value;
+                        logEvents.push("A(!!!?A?!!!)"+array_spaces[i][0]+"(!!!?A?!!!)"+document.getElementById("HTML").value);
+                    }
+                    else{
+                    array_spaces[i][5]="<iframe width=\"100%\" height=\"100%\" src=\""+document.getElementById("IFRam").value+"\" title=\"\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>";
+                    }
+                }
+            }
+            document.getElementById("sean").innerHTML=get_space();
+        }
+
+        myUIcounter=1;
+
+
+        logEvents=[];
+
+        function UIchange(argument) {
+            UIcounter=0;
+            if (argument=='y+') {
+            document.getElementById("down").style.visibility=false;
+            document.getElementById("idD").style.width="0px";
+            };
+            //UIcounter+=1;
+
+
+            if (mode==0){
+                direction=argument;
+                if (direction=='y+'){
+                    direction='y-';
+
+                }
+                else{
+                    if (direction=='y-'){
+                        direction='y+';
+
+                    }
+                }
+            }
+            if (mode==1) {
+                if (argument=='y+') {
+                    adedvalue[1]=adedvalue[1]+1;
+                    holdingvlaue=-1;
+                    doAddStuff();
+                };
+                if (argument=='y-') {
+                    adedvalue[1]=adedvalue[1]-1;
+                    holdingvlaue=-1;
+                    doAddStuff();
+                };
+                if (argument=='x+') {
+                    adedvalue[0]=adedvalue[0]-1;
+                    holdingvlaue=-1;
+                    doAddStuff();
+                };
+                if (argument=='x-') {
+                    adedvalue[0]=adedvalue[0]+1;
+                    holdingvlaue=-1;
+                    doAddStuff();
+                };
+
+                if (argument=='z-') {
+                    adedvalue[2]=adedvalue[2]-1;
+                    holdingvlaue=-1;
+                    doAddStuff();
+                };
+                if (argument=='z+') {
+                    adedvalue[2]=adedvalue[2]+1;
+                    holdingvlaue=-1;
+                    doAddStuff();
+                };
+
+                if (argument=='r-') {
+                    adedvalue[3]=(adedvalue[3]-1)%3;
+                    holdingvlaue=-1;
+                    doAddStuff();
+                };
+                if (argument=='r+') {
+                    adedvalue[3]=(adedvalue[3]+1)%3;
+                    holdingvlaue=-1;
+                    doAddStuff();
+                };
+                if (argument=='none') {
+
+                    thisval=getNewID_For_div();
+                    val = get_spot_by_pos(adedvalue);
+
+                    if (val==-1){
+                        logEvents.push("M(!!!?A?!!!)"+thisval+"_"+adedvalue[0]+"_"+adedvalue[1]+"_"+adedvalue[2]+"_"+adedvalue[3]);
+
+                        array_spaces.push([thisval,adedvalue[0],adedvalue[1],adedvalue[2],adedvalue[3],"","Ifram"]);
+                        document.getElementById("sean").innerHTML=get_space();
+                    }
+                };
+            };
+            if (mode==2){
+                if (argument=='y-') {
+                    jump();
+                    return;
+                }
+                if (argument=='y+') {
+                    fall();
+                    return;
+                }
+                direction=argument;
+            }
+            if (mode==3){
+            }
+        }
+
+
+        function doAddStuff() {
+                offHTML();
+                val = get_spot_by_pos(adedvalue);
+                if (val==-1){
+                    document.getElementById("sean").innerHTML+=addspace(['hold_div',adedvalue[0],adedvalue[1],adedvalue[2],adedvalue[3],"",""]);selectDIV('hold_div','black',1);
+                }
+                else{selectDIV(val,'gold',1);}
+        }
+
+//section2
+    function getimgs() {
+      const ids = {
+        "AU": "idU","AD": "idD","AL": "idL","AR": "idR","ALU": "idLU",
+        "ALD": "idLD",
+        "ARU": "idRU",
+        "ARD": "idRD",
+        "FR1": "CR1",
+        "FR2": "CR2",
+        "FJ": "CJ1",
+        "FL1": "CL1",
+        "FL2": "CL2",
+        "F1S": "CS1",
+        "F2S": "CS2",
+        "BG1": "BGID",
+        "modeimgV": "modeid",
+      };
+      let myaddtomap = "";
+      for (let id in ids) {
+        const element = document.getElementById(ids[id]);
+        myaddtomap += element.value + "(???A???)";
+        if (id === "modeimgV") {
+          myaddtomap += element.value;
+        }
+      }
+      return myaddtomap;
+    }
+
+function changeMap() {
+    const ids = ["AU1", "AD1", "AL1", "AR1", "ALU1", "ALD1", "ARU1", "ARD1", "CR1", "CR2", "CJ1", "CL1", "CL2", "CS1", "CS2", "BGID", "modeid"];
+    const values = ids.map(id => document.getElementById(id).value);
+
+    document.body.style.backgroundImage = `url('${values[15]}')`;
+
+    const imgIds = ["idU", "idL", "idR", "idLU", "idRU", "idLD", "idRD", "modeimg"];
+    imgIds.forEach((imgId, index) => document.getElementById(imgId).src = values[index]);
+
+    const myAddToMap = values.slice(0, 16).join("(???A???)") + "(???A???)" + values[16];
+}
+    myaddtomap="";
+
+    function  modechange() {
+        mode=(mode+1)%4;
+        if (mode==0) {
+
+
+        	if (mypage['player'][0]=='0'){
+
+            document.getElementById("sean").innerHTML=get_space();
+            document.getElementById("texbox").style.visibility="";
+                    document.getElementById("texbox2").style.visibility="hidden";
+            }
+        };
+        if (mode==1) {
+    	        valueold=[0,0,0,3];
+    	        adedvalue=[Math.floor(-camerax/300)+1,Math.floor(-cameray/300)+2,Math.floor(-cameraz/300),0];
+    	        holdingvlaue=-1;
+    	        doAddStuff();
+    	        document.getElementById("texbox").style.visibility="hidden";
+    	                document.getElementById("texbox2").style.visibility="hidden";
+    	        if (mypage['player'][0]!='0'){
+    	        	modechange();
+    	        }
+
+
+        };
+        if (mode==2){
+    	        document.getElementById("sean").innerHTML=get_space();
+    	        document.getElementById("texbox").style.visibility="hidden";
+    	        document.getElementById("texbox2").style.visibility="hidden";
+
+
+        }
+        if (mode==3){
+            modechange()
+        }
+    }
+
+    oldid="";
+    //alert("rightthing");
+
+    function selectDIV(id,number,themode) {
+        if (themode!=mode) {
+            return;
+        };
+        try {
+        document.getElementById(oldid).style.boxShadow="inset 0px 0px 0px 0px gold";
+        }
+        catch (error) {
+        }
+        if (mode==0 || mode==1) {
+            try {
+        document.getElementById(id).style.boxShadow="inset 0px 0px 0px 10px "+number;//boxID
+    document.getElementById("boxID").value=id;
+            }catch (error) {}
+        };
+        oldid=id;
+    }
+
+    var camerax=200;
+    var cameray=515;
+    var cameraz=-250;
+    var newcamerax=200;
+    var newcameray=515;
+    var newcameraz=-250;
+    var rotx=0;
+    var roty=30;
+    var speed = 0.1;
+    var direction="none";
+    document.getElementsByClassName("camera")[0].style.transform = "rotateX("+rotx+"deg) rotateY("+roty+"deg) translate3d("+camerax+"px,"+cameray+"px,"+cameraz+"px)";
+    function  moveforward(direction,speed){
+        timenow= Date.now();
+        distrance = (timenow-lastmovetime)*speed;
+        if (direction=="none") {lastmovetime = timenow; return;}
+        if (direction=="x+"){camerax+=distrance;}
+        if (direction=="x-"){camerax-=distrance;}
+        if (direction=="y+"){cameray+=distrance;}
+        if (direction=="y-"){cameray-=distrance;}
+        if (direction=="z-"){cameraz+=distrance;}
+        if (direction=="z+"){cameraz-=distrance;}
+        if (direction=="r-"){roty-=distrance/20;}
+        if (direction=="r+"){roty+=distrance/20;}
+        if (roty>=40) {roty=40;}
+        if (roty<=20) {roty=20;}
+        document.getElementsByClassName("camera")[0].style.transform = "rotateX("+rotx+"deg) rotateY("+roty+"deg) translate3d("+camerax+"px,"+cameray+"px,"+cameraz+"px)";
+         lastmovetime = timenow;
+        return;
+    }
+
+
+
+    function addspace(array) {
+        if (array[4]==0) {
+            string="<div onclick=\"selectDIV('"+array[0]+"','gold',0);\" id=\""+array[0]+"\" style=\"width: 300px; height: 300px; position: absolute;transform-origin: 0px 0px 0px; transform: translate3d("+array[1]*300+"px,"+array[2]*300+"px,"+array[3]*300+"px) rotateX(90deg);background: red;\"   > ";
+        }
+        if (array[4]==1) {
+           string="<div onclick=\"selectDIV('"+array[0]+"','gold',0);\" id=\""+array[0]+"\" style=\"width: 300px; height: 300px; position: absolute;transform-origin: 0px 0px 0px; transform: translate3d("+(array[1]*300)+"px,"+(array[2]*300-300)+"px,"+array[3]*300+"px) rotateX(0deg);background: blue; \"  > ";
+        }
+        //here111
+        if (array[4]==2) {
+           string="<div onclick=\"selectDIV('"+array[0]+"','gold',0);\" id=\""+array[0]+"\" style=\"width: 300px; height: 300px; position: absolute;transform-origin: 0px 0px 0px; transform: translate3d("+(array[1]*300+300)+"px,"+(array[2]*300-300)+"px,"+(array[3]*300+300)+"px) rotateY(90deg); background: green;\" \"> ";
+        }
+
+        if (mypage['player'][0]!='0'){
+
+        if (array[4]==0) {
+            string="<div onclick=\"selectDIV('"+array[0]+"','gold',0);\" id=\""+array[0]+"\" style=\"width: 300px; height: 300px; position: absolute;transform-origin: 0px 0px 0px; transform: translate3d("+array[1]*300+"px,"+array[2]*300+"px,"+array[3]*300+"px) rotateX(90deg);background: red;\"   > ";
+        }
+        if (array[4]==1) {
+           string="<div onclick=\"selectDIV('"+array[0]+"','gold',0);\" id=\""+array[0]+"\" style=\"width: 300px; height: 300px; position: absolute;transform-origin: 0px 0px 0px; transform: translate3d("+(array[1]*300)+"px,"+(array[2]*300-300)+"px,"+array[3]*300+"px) rotateX(0deg);background: blue; \"  > ";
+        }
+        if (array[4]==2) {
+           string="<div onclick=\"selectDIV('"+array[0]+"','gold',0);\" id=\""+array[0]+"\" style=\"width: 300px; height: 300px; position: absolute;transform-origin: 0px 0px 0px; transform: translate3d("+(array[1]*300+300)+"px,"+(array[2]*300-300)+"px,"+(array[3]*300+300)+"px) rotateY(90deg); background: green;\" \"> ";
+        }
+
+        }
+        string+=array[5]+myaddtobot;
+        string+="</div>";
+        return string;
+    }
+
+
+//section3
+
+        selected="this";
+        var array_spaces= [
+        ['1',0,0,0,0,"thisisit","Ifram"],
+        ];
+        json='';
+
+
+        F1S="";
+        F2S="";
+        FJ="";
+
+        FL1="";
+        FL2="";
+
+        FR1="";
+        FR2="";
+
+        AU="";
+
+        BG1="";
+        modeimgV="";
+
+        function getMAPformID(){
+        changetomap('',"A")
+
+        }
+
+        function changetomap(A,B){
+
+            mymaptext=A;
+            mymaptext=mymaptext.replaceAll('(___P___)', '"');
+            mymaptext=mymaptext.replaceAll('(___F___)','/');
+            mymaptext=mymaptext.replaceAll('(___B___)','\\');
+            mymaptext=mymaptext.replaceAll('(___C___)',':');
+            mymaptext=mymaptext.replaceAll('(___E___)','=');
+            mymaptext=mymaptext.replaceAll('(___S___)',' ');
+            mymaptext=mymaptext.replaceAll('(___2___)','<');
+            mymaptext=mymaptext.replaceAll('(___1___)','>');
+                mymaptext=mymaptext.replaceAll('|','?');
+             mymaptext=mymaptext.replaceAll('(___I___)','|');
+
+            mymaptext=mymaptext.replaceAll('(___A___)','&');
+            json=mymaptext;
+            JSONtoMap(json)
+
+        }
+        JSONtoMap("")
+        function myrun(stiff){
+            console.log("herenow",stiff);
+            JSONtoMap("");
+
+        }
+        function JSONtoMap(json){
+            json='39(???M???)0(???M???)0(???M???)0(???M???)0(???M???)<div style=\"width: 300px; height: 300px; transform: scale(1, 1);\">         <img style=\"position: absolute; top: 0px;left: 0px;\" src=\"https://alex2060.github.io/spiderman/gray.jpg\" width=\"300\" height=\"300\">   </div>(???M???)Ifram(???M???)371(???M???)0(???M???)0(???M???)-1(???M???)1(???M???)https://alex2060.github.io/hyperverse/?player=0&map=https://alex2060.github.io/spiderman/my.js&room=!bbzmvbyRKWnfoLWXPA:matrix.org(???M???)Ifram(???M???)https://alex2060.github.io/spiderman/spidey_left1.png(???A???)https://alex2060.github.io/spiderman/spidey_left1.png(???A???)https://alex2060.github.io/spiderman/spidey_jump.png(???A???)https://alex2060.github.io/spiderman/spidey_right1.png(???A???)https://alex2060.github.io/spiderman/spidey_right2.png(???A???)https://alex2060.github.io/spiderman/spidey_left1.png(???A???)https://alex2060.github.io/spiderman/spidey_left2.png(???A???)https://alex2060.github.io/spiderman/spidey_JUMP_button.png(???A???)(???A???)https://alex2060.github.io/spiderman/spidey_UP_button.png(???A???)https://alex2060.github.io/spiderman/spidey_DOWN_button.png(???A???)https://alex2060.github.io/spiderman/spidey_ROTATE RIGHT_button.png(???A???)https://alex2060.github.io/spiderman/spidey_ROTATE LEFT_button.png(???A???)https://alex2060.github.io/spiderman/spidey_RIGHT_button.png(???A???)https://alex2060.github.io/spiderman/spidey_LEFT_button.png(???A???)https://i.ibb.co/phLFzFZ/c.png(???A???)https://alex2060.github.io/spiderman/background.jpg';
+
+
+
+            console.log("jsoninmap");
+            console.log(json);
+            myarray=json.split("(???M???)");
+            console.log(myarray);
+            for (let i = 0; i < (myarray.length/7)-1; i++) {
+                array_spaces.push([myarray[i*7+0],myarray[i*7+1],myarray[i*7+2],myarray[i*7+3],myarray[i*7+4],myarray[i*7+5],myarray[i*7+6]]);
+            }
+
+            values = myarray[myarray.length-1].split("(???A???)");
+            console.log(player2frams);
+            F1S = player2frams[0][0];
+            F2S = player2frams[0][0];
+            FJ=   player2frams[0][2];
+            FL1=  player2frams[0][3];
+            FL2=  player2frams[0][4];
+            FR1=  player2frams[0][5];
+            FR2=  player2frams[0][1];
+
+            try {
+                value=parseInt(mypage['player'][0]);
+            F1S = player2frams[value][0];
+            F2S = player2frams[value][0];
+            FJ  = player2frams[value][2];
+            FL1 = player2frams[value][3];
+            FL2 = player2frams[value][4];
+            FR1 = player2frams[value][5];
+            FR2 = player2frams[value][1];
+            } catch (error) {
+              console.error(error);
+            }
+            //alert('mymulti2');
+            
+            AU=values[7];
+            document.getElementById("idU").src=AU;
+            AD=values[8];
+
+            AL=values[10];
+            document.getElementById("idL").src=AL;
+            AR=values[9];
+            document.getElementById("idR").src=AR;
+            ALU=values[11];
+            document.getElementById("idLU").src=ALU;
+            ARU=values[12];
+            document.getElementById("idRU").src=ARU;
+            ARD=values[13];
+            document.getElementById("idRD").src=ARD;
+            ALD=values[14];
+            document.getElementById("idLD").src=ALD;
+            modeimgV=values[15];
+            console.log(values);
+            document.getElementById("modeimg").src=modeimgV;
+
+            BG1=values[16];
+
+            document.body.style.backgroundImage = "url('"+BG1+"')";
+            console.log(values);
+            modechange();
+            modechange();
+            modechange();
+            modechange();
+
+            mytext=get_space();
+            console.log("getspaces");
+            console.log(mytext)
+            console.log("outhere")
+
+            document.getElementById("sean").innerHTML=mytext;
+            setInterval(function(){ update(); },1);
+            setInterval(function(){ changephoto() } ,500 );
+
+            array_spaces=delletDiv("3")
+            array_spaces=delletDiv("6")
+            array_spaces=delletDiv("5")
+            array_spaces=delletDiv("7")
+            array_spaces=delletDiv("4")
+            array_spaces=delletDiv("2")
+            array_spaces=delletDiv("1")
+
+
+            
+        }
+
+
+
+        //JSONtoMap(json);
+
+        var lastmovetime = Date.now();
+        selected=[0,0,0];
+
+        oldselect=[0,0,0];
+
+
+        function MaptoJSON(){
+            jsontext="";
+            mytext="";
+            for (let i = 0; i < array_spaces.length; i++) {
+
+            for (let k = 0; k < array_spaces[i].length; k++) {
+                jsontext += array_spaces[i][k]+"(???M???)";
+              };
+            }
+            jsontext=jsontext.replaceAll("\'", "\\\'")
+            jsontext=jsontext.replaceAll('"', '\\\"')
+            mymaptext=jsontext;
+            getimgs();
+            mymaptext+=myaddtomap;
+            myadd = mymaptext;
+            document.getElementById("HTML").value=myadd;
+        }
+        function post_responce(path,func,varible){
+            fetch(path).then(
+            ( response) => {
+            return response.text();
+            })
+            .then((html) => {
+            func( html.trim() , varible )
+            });
+        }
+        function SaveMaptoJSON(){
+            jsontext="";
+            mytext="";
+            for (let i = 0; i < array_spaces.length; i++) {
+
+            for (let k = 0; k < array_spaces[i].length; k++) {
+                jsontext += array_spaces[i][k]+"(???M???)";
+              };
+            }
+            jsontext.replace('"', '\\\"');
+            jsontext.replace('\'', '\\\'');
+
+            mymaptext=jsontext;
+
+            getimgs();
+            mymaptext+=myaddtomap;
+
+            mymaptext=mymaptext.replaceAll('"', '(___P___)');
+            mymaptext=mymaptext.replaceAll('/', '(___F___)');
+            mymaptext=mymaptext.replaceAll('\\','(___B___)');
+            mymaptext=mymaptext.replaceAll(':', '(___C___)');
+            mymaptext=mymaptext.replaceAll('=', '(___E___)');
+            mymaptext=mymaptext.replaceAll(' ', '(___S___)');
+            mymaptext=mymaptext.replaceAll('<', '(___2___)');
+            mymaptext=mymaptext.replaceAll('>', '(___1___)');
+             mymaptext=mymaptext.replaceAll('|', '(___I___)');
+            mymaptext=mymaptext.replaceAll('?', '|');
+            mymaptext=mymaptext.replaceAll('&', '(___A___)');
+
+            myadd = mymaptext;
+        }
+        function postmap(A,B){
+        console.log(A);
+
+        value = JSON.parse(A);
+        document.getElementById("HTML").value="http://localhost:8000/doit?action_type=makepage&usertemplate_name=u1_mygameqjveaeaqcxsewfrsnsgw&var1=&rep=&setion="+value['id']
+
+        value['id'];
+
+        }
+
+
+        mytext="";
+
+        var playerposx=0;
+        var playerposy=0;
+        var playerposz=0;
+
+        function get_space(){
+            mytext="";
+            for (let i = 0; i < array_spaces.length; i++) {
+              mytext += addspace(array_spaces[i]);
+            }
+            return mytext+addplayer();
+        }
+        mydata = "";
+        mytext=get_space();
+        document.getElementById("sean").innerHTML+=mytext;
+        function get_spot_by_pos(spot) {
+            for (let i = 0; i < array_spaces.length; i++) {
+                if (array_spaces[i][1]==spot[0] && array_spaces[i][2]==spot[1] && array_spaces[i][3]==spot[2] && array_spaces[i][4]==spot[3]){
+                    return array_spaces[i][0];
+                }
+              
+            }
+            return -1;
+        }
+        mode=1;
+        valueold=[0,0,0,3];
+        adedvalue=[-1,0,0,0];
+        holdingvlaue=-1;
+        function getNewID_For_div() {
+            maxvalue=-100;
+            for (let i = 0; i < array_spaces.length; i++) {
+                try {
+                    if (maxvalue <= parseInt(array_spaces[i][0])){
+                        maxvalue=parseInt(array_spaces[i][0]);
+                    }
+                }catch (error) {}
+            }
+            maxvalue++;
+            return maxvalue;
+        }
+        var playerz=0;
+        var playery=0;
+        var playerx=0;
+
+        var newplayerz=0;
+        var newplayery=0;
+        var newplayerx=0;
+        function update() {
+            if (mode==0) {
+                moveforward(direction,speed);
+            };
+            moveplayer(direction,speed);
+        }
+        var jumper = 0;
+        var falling = 0;
+        function jump() {
+            jumper=30;
+        }
+
+
+
+        animation_counter = 0;
+        maxwalk =2;
+        maxleft=2;
+        maxjumpleft=1;
+        maxjumpright=1;
+        const d = new Date();
+
+        haschaged = false;
+        mydir="";
+        anicounter=0;
+
+
+//section4
+
+        function changephoto() {
+        anicounter+=1;
+
+            if (landed==false) {
+                document.getElementById("play").src=FJ;
+                return;
+
+            };
+            if (mydir=="none") {
+                if (anicounter%2==0){
+                 //document.getElementById("play").src=F1S;
+                 }   
+                 else{
+                    //document.getElementById("play").src=F2S;
+
+                 }
+                 return;
+            }
+
+
+
+            if ("z-"==mydir) {
+                if (anicounter%2==0){
+                 document.getElementById("play").src=FL1;
+                 }   
+                 else{
+                    document.getElementById("play").src=FL2;
+                 }
+                 return;
+
+            };
+
+            if ("z+"==mydir) {
+                if (anicounter%2==0){
+                 document.getElementById("play").src=FR2;
+                 }   
+                 else{
+                    document.getElementById("play").src=FR1;
+                 }
+                 return;
+
+            };
+
+
+            if ("x+"==mydir) {
+                if (anicounter%2==0){
+                 document.getElementById("play").src=FL1;
+                 }   
+                 else{
+                    document.getElementById("play").src=FL2;
+                 }
+                 return;
+
+            };
+
+            if ("x-"==mydir) {
+                if (anicounter%2==0){
+                 document.getElementById("play").src=FR2;
+                 }   
+                 else{
+                    document.getElementById("play").src=FR1;
+                 }
+                 return;
+
+            };
+
+        }
+
+//section5
+
+        function moveplayer(direction,speed) {
+            //console.log("in here no2");
+            mydir=direction;
+
+         
+
+
+            timenow= Date.now();
+            distrance = (timenow-lastmovetime)*speed;
+                moveextra2(0);
+                moveextra2(1);
+                moveextra2(2);
+                moveextra2(3);
+                moveextra2(4);
+                moveextra2(5);
+                moveextra2(6);
+                moveextra2(7);
+            pdistrance=0;
+            if (mode==2){
+        	pdistrance=distrance;
+        	}
+
+            newplayerz=playerz;
+            newplayery=playery;
+            newplayerx=newplayerx;
+
+            newcameraz=cameraz;
+            newcameray=cameray;
+            newcamerax=camerax;
+            if (direction=="none") {lastmovetime = timenow;}
+            if (direction=="x+"){newcamerax+=pdistrance; newplayerx-=pdistrance;}
+            if (direction=="x-"){newcamerax-=pdistrance; newplayerx+=pdistrance;}
+            if (direction=="z-"){newcameraz+=pdistrance; newplayerz-=pdistrance;}
+
+            if (direction=="z+"){newcameraz-=pdistrance; newplayerz+=pdistrance;}
+            //console.log(newplayery);
+
+            if (direction=="r-"){roty-=pdistrance/20;}
+            if (direction=="r+"){roty+=pdistrance/20;}
+            if (roty>=40) {roty=40;}
+            if (roty<=20) {roty=20;}
+        	if (jumper>=-20){jumper+=-pdistrance/10;}
+            if (newplayery>=50) {
+            	if (jumper>=0) {
+            		newcameray+=pdistrance*jumper/10;
+        			newplayery+=-pdistrance*jumper/10;
+            	};
+            	onserface(distrance);
+            }
+
+                else{
+                	newcameray+=pdistrance*jumper/10;
+                newplayery+=-pdistrance*jumper/10;
+                onserface(distrance);
+                }
+
+        async function moveextra2(value){
+
+            landed2=false;
+
+            for (let i = 0; i < array_spaces.length; i++) {
+                try {
+                        if (array_spaces[i][1]==Math.floor((player2poss[value][0]+130)/300) && array_spaces[i][3]==Math.floor( (player2poss[value][2]+130)/300) && array_spaces[i][2]==Math.floor((player2poss[value][1]+0)/300) && array_spaces[i][4]==0 )  {
+                            landed2=true;
+                        };
+                    }catch (error) {
+                      console.error(error);
+                    }
+            }
+            place=0;
+            if (player2stack[value].length!=0){
+
+                targetpos=player2stack[value][0].split("_");
+                targetpos=[parseFloat(targetpos[0]),parseFloat(targetpos[1]),parseFloat(targetpos[2])];
+
+                distrance2=((targetpos[0]-player2poss[value][0])**2+(targetpos[1]-player2poss[value][1])**2+(targetpos[2]-player2poss[value][2])**2)**(1/2);
+                if ( distrance2<=15){
+                    player2poss[value]=targetpos;
+                    player2stack[value]=player2stack[value].slice(1)
+                }
+                else{
+                    muti=6;
+                    if (player2stack[value].length==4){
+                     muti=4;   
+                    }
+                    if (player2stack[value].length==3){
+                     muti=4;   
+                    }
+                    if (player2stack[value].length==2){
+                     muti=2;   
+                    }
+                    if (player2stack[value].length==1){
+                     muti=0.5;   
+                    }
+                    player2poss[value][0]+=muti*0.1*distrance*(targetpos[0]-player2poss[value][0])/distrance2;
+                    player2poss[value][1]+=muti*0.1*distrance*(targetpos[1]-player2poss[value][1])/distrance2;
+                    player2poss[value][2]+=muti*0.1*distrance*(targetpos[2]-player2poss[value][2])/distrance2;
+                    playerfram[value]+=muti*0.003*distrance;
+                    if ((targetpos[2]-player2poss[value][2])**2>=(targetpos[1]-player2poss[value][1])**2 &&  (targetpos[2]-player2poss[value][2])**2>=(targetpos[0]-player2poss[value][0])**2){
+                            if ((targetpos[2]-player2poss[value][2])>=0){
+                                place=0;
+                                //console.log("outhere")
+                                if (Math.floor(playerfram[value])%2==0) {
+                                    place=1;
+                                    //console.log("inhere")
+                                }
+                                
+                            }
+                            else{
+                                place=3;
+                                //console.log("outhere");
+                                if (Math.floor(playerfram[value])%2==0) {
+                                    place=4;
+                                    //console.log("inhere");
+                                }
+                               
+
+                            }
+                    }
+                    if ((targetpos[1]-player2poss[value][1])**2>=(targetpos[2]-player2poss[value][2])**2 &&  (targetpos[1]-player2poss[value][1])**2>=(targetpos[0]-player2poss[value][0])**2){
+                            place=3;
+                            if ((targetpos[1]-player2poss[value][1])>=0){
+                                place=0;
+                                //console.log("outhere")
+                                if (Math.floor(playerfram[value])%2==0) {
+                                    place=1;
+                                    //console.log("inhere")
+                                }
+                            }
+                            else{
+                                place=3;
+                                //console.log("outhere");
+                                if (Math.floor(playerfram[value])%2==0) {
+                                    place=4;
+                                    //console.log("inhere");
+                                }
+                            }
+                    }
+                    if ((targetpos[0]-player2poss[value][0])**2>=(targetpos[2]-player2poss[value][2])**2 &&  (targetpos[0]-player2poss[value][0])**2>=(targetpos[1]-player2poss[value][1])**2){
+                            place=3;
+                            if ((targetpos[0]-player2poss[value][0])>=0){
+                                place=0;
+                                if (Math.floor(playerfram[value])%2==0) {
+                                    place=1;
+                                }
+                            }
+                            else{
+                                place=3;
+                                if (Math.floor(playerfram[value])%2==0) {
+                                    place=4;
+                                }
+                            }
+                    }
+                }
+                //console.log('number3',player2poss[value]);
+                document.getElementById("player"+(2+value)).style.transform = "translate3d("+(player2poss[value][0]+100)+"px, "+(player2poss[value][1]-100)+"px, "+(player2poss[value][2]+50)+"px) rotateY(-45deg)";
+                if (landed2==false){
+                 place=2; 
+                }
+                document.getElementById("play"+(2+value)).src=player2frams[value][place]; 
+            }
+
+
+        }
+
+
+
+        function onserface(distrance){
+            playerx;
+            playerz;
+            playery;
+            newplayery;
+            landed=false;
+            for (let i = 0; i < array_spaces.length; i++) {
+                if (array_spaces[i][1]==Math.floor((playerx+130)/300) && array_spaces[i][3]==Math.floor( (playerz+130)/300) && array_spaces[i][2]==Math.floor((playery+0)/300) && array_spaces[i][4]==0 )  {
+                    landed=true;
+                };
+            }
+            if (landed) {
+                if (jumper<=0) {
+                    jumper=0;
+                }
+                else{
+                    cameray=newcameray;
+                    playery=newplayery;
+                }
+            }
+            else{
+                    cameray=newcameray;
+                    playery=newplayery;
+            }
+            wallx=false;
+            for (let i = 0; i < array_spaces.length; i++) {
+                if (array_spaces[i][1]==Math.floor((playerx+130)/300) && array_spaces[i][3]==Math.floor( (playerz+130)/300) && array_spaces[i][2]==Math.floor((playery+0)/300) && array_spaces[i][4]==1 )  {
+                    if ( Math.floor((playerz+130)/300-0.2)!=Math.floor((playerz+130)/300) ) {
+                        wallx=true;
+                    };
+                };
+            }
+            if (wallx==true){
+                if (cameraz>=newcameraz){
+                    cameraz=newcameraz;
+                    playerz=newplayerz;
+                }
+                else{}
+            }
+            else{cameraz=newcameraz;playerz=newplayerz;}
+            wally=false;
+            for (let i = 0; i < array_spaces.length; i++) {
+                if ((array_spaces[i][1])==Math.floor((playerx+130-300)/300) && array_spaces[i][3]==Math.floor( (playerz+130)/300) && array_spaces[i][2]==Math.floor((playery+0)/300) && array_spaces[i][4]==2 )  {
+                    if ( Math.floor((playerx+130)/300-0.2)!=Math.floor((playerx+130)/300) ) {
+                        wally=true;
+                    };
+                };
+            }
+            if (wally==true){
+                if (playerx>=newplayerx){
+                    camerax=newcamerax;
+                    playerx=newplayerx;
+                }
+                else{}
+            }
+            else{camerax=newcamerax;playerx=newplayerx;}
+        }
+
+
+
+
+        //playery=newplayery;
+            //physics
+
+            document.getElementsByClassName("camera")[0].style.transform = "rotateX("+rotx+"deg) rotateY("+roty+"deg) translate3d("+camerax+"px,"+cameray+"px,"+cameraz+"px)";
+
+            document.getElementById("player1").style.transform = "translate3d("+(playerx+100)+"px, "+(playery-100)+"px, "+(playerz+50)+"px) rotateY(-45deg)";
+
+
+            lastmovetime = timenow;
+
+        }
+
+//section7 
+
+        //+="<div id=\"plane3\"></div>";
+        modechange();
+        modechange();
+
+        modechange();
+        modechange();
+        modechange();
+        modechange();
+        modechange();
+
+
+        player2stack=[[],[],[],[],[],[],[],[]];
+        player2poss=[[1,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[1,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[1,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[1,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[1,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[1,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[1,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[1,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[1,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[1,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[1,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[1,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[1,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[1,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[1,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[1,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[1,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[1,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[1,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[1,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[1,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[1,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[1,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[1,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[1,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[1,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[1,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[1,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[1,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[1,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[1,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[1,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0]];
+
+        playerfram=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+
+
+        playerphoto=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+
+
+        photoarray=['','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','']
+
+
+        console.log(array_spaces);
+        function onserface(distrance){
+
+            playerx;
+            playerz;
+            playery;
+            newplayery;
+            landed=false;
+            for (let i = 0; i < array_spaces.length; i++) {
+                if (array_spaces[i][1]==Math.floor((playerx+130)/300) && array_spaces[i][3]==Math.floor( (playerz+130)/300) && array_spaces[i][2]==Math.floor((playery+0)/300) && array_spaces[i][4]==0 )  {
+                    landed=true;
+                };
+            }
+
+            console.log(playerz);
+            if (playerz>=100){
+            	landed=true;
+            }
+            if (landed) {
+                if (jumper<=0) {
+                    jumper=0;
+                }
+                else{
+                    cameray=newcameray;
+                    playery=newplayery;
+                }
+            }
+            else{
+                    cameray=newcameray;
+                    playery=newplayery;
+            }
+
+
+            wallx=false;
+            for (let i = 0; i < array_spaces.length; i++) {
+                if (array_spaces[i][1]==Math.floor((playerx+130)/300) && array_spaces[i][3]==Math.floor( (playerz+130)/300) && array_spaces[i][2]==Math.floor((playery+0)/300) && array_spaces[i][4]==1 )  {
+                    if ( Math.floor((playerz+130)/300-0.2)!=Math.floor((playerz+130)/300) ) {
+                        wallx=true;
+                    };
+                };
+            }
+            if (wallx==true){
+                if (cameraz>=newcameraz){
+                    cameraz=newcameraz;
+                    playerz=newplayerz;
+                }
+                else{}
+            }
+            else{cameraz=newcameraz;playerz=newplayerz;}
+
+            wally=false;
+            for (let i = 0; i < array_spaces.length; i++) {
+                if ((array_spaces[i][1])==Math.floor((playerx+130-300)/300) && array_spaces[i][3]==Math.floor( (playerz+130)/300) && array_spaces[i][2]==Math.floor((playery+0)/300) && array_spaces[i][4]==2 )  {
+                    if ( Math.floor((playerx+130)/300-0.2)!=Math.floor((playerx+130)/300) ) {
+                        wally=true;
+                    };
+                };
+
+
+            }
+            if (wally==true){
+                if (playerx>=newplayerx){
+                    camerax=newcamerax;
+                    playerx=newplayerx;
+                }
+                else{}
+            }
+            else{camerax=newcamerax;playerx=newplayerx;}
+        }
+
+        OLDposs="";
+
+//section 9
+
+            function parseURLParams(url) {
+                cont=0;
+                var queryStart = url.indexOf("?") + 1,
+                    queryEnd   = url.indexOf("#") + 1 || url.length + 1,
+                    query = url.slice(queryStart, queryEnd - 1),
+                    pairs = query.replace(/\+/g, " ").split("&"),
+                    parms = {}, i, n, v, nv;
+                if (query === url || query === ""){
+                    return parseURLParams("http://localhost:8000/1_F.html?player=0&map=https://alex2060.github.io/spiderman/my.js&room=!bbzmvbyRKWnfoLWXPA:matrix.org");
+                };
+
+                for (i = 0; i < pairs.length; i++) {
+                    nv = pairs[i].split("=", 2);
+                    n = decodeURIComponent(nv[0]);
+                    v = decodeURIComponent(nv[1]);
+
+                    if (!parms.hasOwnProperty(n)) parms[n] = [];
+                    parms[n].push(nv.length === 2 ? v : null);
+                    cont++;
+
+                }
+
+                return parms;
+            }
+
+
+            makegrid=true;
+            addtobackholder="<div style=\"display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(3, 1fr); grid-gap: 0px; width: 290px; height: 290px; border:5px solid black;position: absolute;  left: 0px; top: 0px;\">   <div style=\"border:5px solid black;\"></div>   <div style=\"border:5px solid black;\"></div>   <div style=]\"border:5px solid black;\"></div>   <div style=\"border:5px solid black;\"></div>   <div style=\"border:5px solid black;\"></div>   <div style=\"border:5px solid black;\"></div>   <div style=\"border:5px solid black;\"></div>   <div style=\"border:5px solid black;\"></div>   <div style=\"border:5px solid black;\"></div> </div>";
+
+
+            function grid(){
+            	myaddtobot="";
+            	if (makegrid) {
+            	myaddtobot=addtobackholder;
+            	makegrid=false;
+            	}
+            	else{
+            		makegrid=true;
+            	}
+            	offHTML();
+            	ONHTML();
+
+            }
+
+            if (true){
+            document.getElementById("DM").innerHTML="<div id=\"z3\"       onclick=\"UIchange(\'y+\');\"><img  id=\"idRD\" src=\"https://alex2060.github.io/spiderman/spidey_DOWN_button.png\" alt=\"X+\" width=\"100%\" height=\"100%\"></div></div><div id=\"z4\"       onclick=\"modechange();\"><img  id=\"idRD\" src=\"https://alex2060.github.io/spiderman/spidey_PAUSE_button.png\" alt=\"X+\" width=\"100%\" height=\"100%\"></div> "+"<div id=\"z5\"       onclick=\"grid();\"><img  id=\"idRD\" src=\"https://alex2060.github.io/spiderman/spidey_PAUSE_button.png\" alt=\"X+\" width=\"100%\" height=\"100%\"></div> ";
+            }
+
+
+            if (mypage['player'][0]!='0'){
+                modechange();
+                modechange();
+                modechange();
+                modechange();
+                modechange();
+                modechange();
+
+                function addspace(array) {
+                    if (array[4]==0) {
+                        string="<div onclick=\"selectDIV('"+array[0]+"','gold',0);\" id=\""+array[0]+"\" style=\"width: 300px; height: 300px; position: absolute;transform-origin: 0px 0px 0px; transform: translate3d("+array[1]*300+"px,"+array[2]*300+"px,"+array[3]*300+"px) rotateX(90deg);\"   > ";
+                    }
+                    if (array[4]==1) {
+                       string="<div onclick=\"selectDIV('"+array[0]+"','gold',0);\" id=\""+array[0]+"\" style=\"width: 300px; height: 300px; position: absolute;transform-origin: 0px 0px 0px; transform: translate3d("+(array[1]*300)+"px,"+(array[2]*300-300)+"px,"+array[3]*300+"px) rotateX(0deg); \"  > ";
+                    }
+
+                    if (array[4]==2) {
+                       string="<div onclick=\"selectDIV('"+array[0]+"','gold',0);\" id=\""+array[0]+"\" style=\"width: 300px; height: 300px; position: absolute;transform-origin: 0px 0px 0px; transform: translate3d("+(array[1]*300+300)+"px,"+(array[2]*300-300)+"px,"+(array[3]*300+300)+"px) rotateY(90deg);\" \"> ";
+                    }
+                    //heeeer
+                    string+=array[5]+ myaddtobot;
+                    string+="</div>";
+                    return string;
+                }
+
+            }
+
+            function pasemessage(message){
+
+                myplayer=mypage['player'][0];
+
+                message=message.split("(!!!?A?!!!)");
+                //console.log("insplit",message)
+
+                try{
+                    for (var i = 0; i < 30; i++) {
+                    	 if (message[0]=="p"+i && mypage['player'][0]!=i) {
+            		        player2stack[i].push(message[1]+'_'+message[2]+"_"+message[3])
+            		    }
+                    };
+                }catch (error) {
+                    console.error(error);
+                }
+
+                try{
+                    for (var i = 0; i < 30; i++) {
+                    	 if (message[0]=="mp"+i) {
+                    	 	if( mypage['player'][0]!=i){
+                    	 	player2stack[i]=[]
+            		        player2poss[i]=[parseFloat(message[1])-10,parseFloat(message[2]),parseFloat(message[3])]
+            		        player2stack[i].push(message[1]+'_'+message[2]+"_"+message[3]);
+
+            		    	}
+            		    	else{
+            		    		playerx=parseFloat(message[1]);
+            		    		playery=parseFloat(message[2]);
+            		    		playerz=parseFloat(message[3]);
+
+            		    	}
+
+
+            		    }
+                    };
+                }catch (error) {
+                    console.error(error);
+                }
+
+                if (message[0]=="M"){
+                    val=message[1].split("_");
+                    array_spaces.push([val[0],val[1],val[2],val[3],val[4],"","Ifram"]);
+                    document.getElementById("sean").innerHTML=get_space();
+                }
+                if (message[0]=="A"){
+                    val=message[1];
+                    for (var i = 0; i < array_spaces.length; i++) {
+                        if (array_spaces[i][0]==message[1]) {
+                            console.log("inhere");
+                            array_spaces[i][5]=message[2];
+                            document.getElementById("sean").innerHTML=get_space();
+                        };
+                    };
+                }
+
+                if (message[0]=="D"){
+                	array_spaces=delletDiv(message[1]);
+                	ONHTML();
+                }
+                
+            }
+
+            function pasemessage2(message){
+                try{
+                    messagepass(message)
+                }catch (error) {
+                    console.error(error);
+                }
+
+                myplayer=mypage['player'][0];
+
+                message=message.split("(!!!?A?!!!)");
+                console.log("insplit",message)
+
+
+                try{
+                    for (var i = 0; i < 30; i++) {
+                    	 if (message[0]=="mp"+i) {
+                    	 	if( mypage['player'][0]!=i){
+                    	 	player2stack[i]=[]
+            		        player2poss[i]=[parseFloat(message[1])-10,parseFloat(message[2]),parseFloat(message[3])]
+            		        player2stack[i].push(message[1]+'_'+message[2]+"_"+message[3]);
+
+            		    	}
+            		    	else{
+            		    		playerx=parseFloat(message[1]);
+            		    		playery=parseFloat(message[2]);
+            		    		playerz=parseFloat(message[3]);
+            		    	}
+            		    }
+                    };
+                }catch (error) {
+                    console.error(error);
+                }
+                    try{
+                    for (var i = 0; i < 30; i++) {
+                    	 if (message[0]=="p"+i && mypage['player'][0]==i) {
+                    	 	player2stack[i]=[]
+            		        player2stack[i].push(message[1]+'_'+message[2]+"_"+message[3]);
+            		        player2poss[i]=[parseFloat(message[1]),parseFloat(message[2]),parseFloat(message[3])]
+            		    }
+                    };
+                }catch (error) {
+                    console.error(error);
+                }
+                if (message[0]=="M"){
+                    val=message[1].split("_");
+                    array_spaces.push([val[0],val[1],val[2],val[3],val[4],"","Ifram"]);
+                    document.getElementById("sean").innerHTML=get_space();
+                }
+                if (message[0]=="A"){
+                    val=message[1];
+                    for (var i = 0; i < array_spaces.length; i++) {
+                        if (array_spaces[i][0]==message[1]) {
+                            console.log("inhere");
+                            array_spaces[i][5]=message[2];
+                            document.getElementById("sean").innerHTML=get_space();
+                        };
+                    };
+                }
+
+                if (message[0]=="D"){
+                	array_spaces=delletDiv(message[1]);
+                	ONHTML();
+                }
+                
+            }
+
+
+
+            _player=mypage['player'][0];
+            _ID=mypage['id'][0];
+            if (_player=='0') {
+                mypage['player'][0]='1';
+                _player=mypage['player'][0];
+            };
+
+
+            oldbase="";
+            function doMultiplayer(){
+                //console.log(logEvent);
+                if (logEvents.length==0){
+                    base="p"+mypage['player'][0]+"(!!!?A?!!!)"+playerx+"(!!!?A?!!!)"+playery+"(!!!?A?!!!)"+playerz;
+                }
+                else{
+                    base=logEvents.shift();
+                    //logEvent="";
+                }
+                if (base!=oldbase) {
+                callPHPFunction("http://localhost:8000/myfunction.php?uuid=thus&player="+_player+"&message="+base,-1);
+                oldbase=base;
+                };
+
+                for (let i = 0; i < 10; i++) {
+                    if (_player!=i+""){
+                      callPHPFunction("http://localhost:8000/myfunction.php?uuid=thus&player="+i+"&id="+ids[i],i);
+                        }
+                        else{
+                            console.log('gotit')
+                        }
+                }
+                setTimeout(doMultiplayer, 7000);
+            }
+
+            function callPHPFunction(url,type) {
+              var param = "World";
+              var xhr = new XMLHttpRequest();
+              xhr.open("POST", url);
+              xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+              xhr.onreadystatechange = function() {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                  if (xhr.status === 200) {
+                    rep_val123=xhr.responseText;
+                    console.log(rep_val123);
+
+                    if (rep_val123!="NA"){
+                        ids[type]+=1;
+                        pasemessage(rep_val123);
+                    }
+
+
+                  }
+                  else {
+                    alert("Error: " + xhr.statusText);
+                  }
+                }
+              };
+              xhr.send("param=" + param);
+            }
+            doMultiplayer()
+
+            function getEverthing(){
+                console.log(ids)
+                console.log(player2poss)
+
+            }
+
+</script>
+<script type="text/javascript">
+/*
+    const Matrix = require('matrix-api/Matrix').Matrix;
+    const baseUrl = 'https://matrix.org/_matrix';
+    const matrix  = new Matrix(baseUrl);
+    matrix.addEventListener('logged-in', event => {
+        console.log('Logged in!', event);
+        // Start polling the server
+
+
+        matrix.listenForServerEvents();
+        // Act on events of only one type:
+        matrix.addEventListener('m.room.message', event => {
+            console.log('Message:', event.detail.content.body);
+            pasemessage(event.detail.content.body);
+        });
+
+        const roomId  = mypage['room'][0];
+        matrix.joinRoom(roomId);
+
+
+        console.log('about to sync')
+        const sync = matrix.syncRoomHistory(
+			roomId
+			, message => console.log(message)
+			, Date.now() - (7 * 24 * 60 * 60 * 1000)
+			, null
+			, { types: ['message.type.one', 'message.type.two', 'message.type.three'] }
+		);
+
+
+        function sendmessage() {
+
+            const evttype = 'm.room.message';
+            const msgtype = 'm.text';
+
+
+            //console.log(logEvent);
+            if (logEvents.length==0){
+                base="p"+mypage['player'][0]+"(!!!?A?!!!)"+playerx+"(!!!?A?!!!)"+playery+"(!!!?A?!!!)"+playerz;
+            }
+            else{
+                base=logEvents.shift();
+                logEvent="";
+            }
+            const body    = base;
+
+            if (body!=OLDposs) {
+                const message = {msgtype, body};
+                let values="";
+                matrix.putEvent(roomId, evttype, message)
+                .then(response => values=response)
+                .catch(error => console.error(error));
+                OLDposs=body;
+            };
+
+            matrix.listenForServerEvents()
+        }
+        
+        run();
+        counter=0;
+        nomore=false
+        array=[]
+        function run(){
+
+
+            const onEvents = response => {
+                console.log(response);
+                for (var i = 0; i < 10; i++) {
+                	console.log(response.chunk[i].content['body'])
+                	if (nomore==false){
+                		array.push(response.chunk[i].content['body'])
+                	}
+                	if (response.chunk[i].content['body']=="stop"){
+                		nomore=true;
+                	}
+                };
+                
+
+                counter++;
+                console.log("inhere"+counter);
+
+                if (counter!=30){
+                	matrix.syncRoom(roomId).then(response =>{ onEvents(response); });
+                }
+
+                else{
+                	console.log(array)
+                	console.log("back")
+                	for (var i = 0; i < array.length; i++) {
+
+                		console.log(array[i]);
+                		pasemessage2(array[i]);
+	                };
+
+                }
+            }
+            matrix.syncRoom(roomId).then(response =>{
+                onEvents(response);
+            });
+            matrix.getEvent(roomId, "$NDu_O0Fjh7R7s6k2SmT7KuRPcol-n31fHexppqGa0Zk").then(response => console.log(response));
+        }
+
+
+
+
+    });
+
+    document.querySelector("#but").addEventListener("click",event=>{
+        myfun();
+        JSONtoMap("");
+        const redirectUrl = location.origin + '/sin.html';
+        matrix.initSso(redirectUrl);
+    })
+*/
+</script>
+
+
+
+
+
+
+
+ 
+</body>
+</html>
